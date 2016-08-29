@@ -1,0 +1,17 @@
+<html>
+<head>
+<link rel="stylesheet" href="/static/css/styles.css" type="text/css">
+</head>
+<body>
+	<div id="edit">
+		<h1>Edit product {{product['id']}}</h1>
+		<form action="/products/update/{{product['id']}}" method='POST'>
+			<label>Name: <input type="text" name='name' value= "{{product['name']}}" ></label>
+			<label>Description: <input type="text" name='description' value= "{{product['description']}}"></label>
+			<label>Price: <input type="text" name='price' value= "{{product['price']}}"></label>
+			<label><input type="submit" name='submit' value="Update"></label>		
+		</form>	
+		<a href="/products/show/{{product['id']}}">Show</a>|<a href="/">Back</a>
+	</div>
+</body>
+</html>

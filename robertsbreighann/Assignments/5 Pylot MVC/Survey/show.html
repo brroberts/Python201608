@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css" media="screen">
+		div{margin: 0 auto; text-align: center; width: 200px;}
+		h1{text-align: center; text-decoration: underline;}
+			#name{margin-bottom: 10px;}
+			#container{    
+				background: darkgray;
+				margin: 0 auto;
+			    width: 400px;
+			    padding: 10px;
+			    border: 1px solid;}
+	</style>
+</head>
+<body>
+	<div id="container">
+		<h1>Submitted Information</h1>
+		<div>Name:
+			{{info['name']}}
+		</div>
+		<div>Favorite Language:
+			{{info['language']}}
+		</div>
+		<div>Dojo Location:
+			{{info['location']}}
+		</div>
+		<div>Comment:
+			{{info['description']}}
+		</div>
+	</div>
+</body>
+</html>

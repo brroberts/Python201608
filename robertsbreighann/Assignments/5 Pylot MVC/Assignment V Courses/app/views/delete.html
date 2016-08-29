@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Delete a course</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/styles.css" type="text/css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Are you sure you want to delete the following course?</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3"><h4>Name:</h4></div>
+        <div class="col-sm-5">{{ course[0]['name'] }}</div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3"><h4>Description:</h4></div>
+        <div class="col-sm-5">{{ course[0]['description'] }}</div>
+      </div>
+      <div class="row">
+        <form action="/courses/delete_confirm/{{ course[0]['id'] }}" method='post' class="form-inline">
+          <div class="col-md-6  text-center">
+            <button type="submit" name='submit' value='no' class="btn btn-default">No</button>
+            <button type="submit" name='submit' value='yes' class="btn btn-danger">Yes I want to delete this</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

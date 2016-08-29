@@ -1,0 +1,53 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: calibri;
+}
+#errors {
+	color:red;
+	margin:40px 10px 10px 10px;		
+}
+h1 {
+	display: block;	
+	background-color: dodgerblue;
+	padding: 5px;
+	color: white;
+	border-top: 1px solid dodgerblue;
+	border-radius: 10px 10px 0 0;
+	margin-top: 0;
+}
+/*div wrapping whole login box whole login page*/
+#log , #regform  {
+	width: 320px;
+	margin: 200px auto;	
+	border: 1px solid dodgerblue;
+	border-radius: 15px;
+	overflow: hidden;
+}
+/*login button */
+#login {
+	width: 50px;
+}
+.button{	
+	border: none;	
+	margin:10px 5px ;
+	font-weight: bold;
+	padding: 2.5px;
+	border-radius: 5px;
+	
+}
+#reg {
+	margin-top: -5px;
+}
+label {	
+	clear: both;
+	display: block;	
+	padding: 5px;
+}
+input{
+	float: right;
+}
+#regform {
+	width: 380px;
+}
+	

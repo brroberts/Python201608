@@ -1,0 +1,36 @@
+* {
+  font-family: monaco;
+}
+label {
+  display: block;
+  margin: 10px 0;
+
+}
+
+input, select {
+  float: right;
+}
+
+textarea {
+  width: 280px; 
+}
+#survey, #disp, #top {
+  width: 300px;
+  overflow: hidden;
+  border: 1px solid black;
+}
+#survey * {
+  padding: 5px;
+}
+#disp *{
+  padding: 5px;
+}
+#wrap {
+  width: 305px;
+  overflow: hidden;
+}
+
+#top {
+  margin: 10px 0;
+  background-color: palegreen;
+}

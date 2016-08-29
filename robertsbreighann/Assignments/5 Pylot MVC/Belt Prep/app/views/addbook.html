@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="/static/css/styles.css" type="text/css">
+  </head>
+  <body>
+    <h1>Add a new book title and review!</h1>
+    <form method='POST' action='/books/add' class='styled'>
+      <label>
+        Book Title: <input type='text' name='title' placeholder='The book title' />
+      </label>
+      <label>
+        Author: <small>Choose from the list:</small><select name='author_list'>
+            <option value="0">Select An Author</option>
+          {% for key in authors: %}
+            <option value="{{ key }}">{{ authors[key] }}</option>
+          {% endfor %}
+        </select>
+        <small>Or add a new author</small>
+        <input type='text' name='author' placeholder='type in the authors name here' />
+      </label>
+      <label>
+        Review: <textarea name='review'></textarea>
+      </label>
+      <label>
+        Rating: <select name='rating'>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+        </select> stars.
+      </label>
+      <input type='submit' value='Add Book and Review' />
+    </form>
+  </body>
+</html>

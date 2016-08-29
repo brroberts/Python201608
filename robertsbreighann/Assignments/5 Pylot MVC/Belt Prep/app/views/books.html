@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="/static/css/styles.css" type="text/css">
+    <style type="text/css">
+    img {
+      width:16px;
+      height:16px;
+    }
+    span {
+      color:yellow;
+      border:1px solid #ffff00;
+    }
+    </style>
+  </head>
+  <body>
+    <h1>Recent Book Reviews</h1>
+
+      {% for review in reviews: %}
+        <div>
+          <p><a href='/books/{{ review['book_id']}}'>{{review['title']}}</a></p>
+          <p>Rating: {% for i in range(review['rating']): %}
+            <span>&starf;</span>
+            {% endfor %}</p>
+          <p><a href='/users/{{review['user_id']}}'>{{review['alias'] }}</a> says: {{ review['review']}}</p>
+          <p>Posted on {{ review['created_at'] }}</p>
+        </div>
+      {% endfor %}
+      
+      
+    <h1>Other Books With Reviews</h1>
+      <ul>
+        {% for book in books: %}
+          <div>
+            <li><a href='/books/{{ book['id']}}'>{{book['title']}}</a></li>
+          </div>
+        {% endfor %}
+      </ul>
+
+    </form>
+  </body>
+</html>

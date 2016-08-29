@@ -1,0 +1,12 @@
+* {
+  font-family: monaco;
+}
+
+.styled label {
+  display: block;
+}
+
+.styled {
+  display: inline-block;
+  width: 400px;
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Ninja Money</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="static/style.css">
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    </head>
+    <script>
+        $(document).ready(function(){
+            $(".activity").scrollTop($(".activity")[0].scrollHeight);
+        });
+    </script>
+    <body>
+      <div class="container">
+        <div class="row tmargin">
+            <div class="col-md-1">Your Gold:</div>
+            <div class="col-md-1">{{ gold }}</div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="col-md-12 border text-center">
+                    <h1>Farm</h1>
+                    <h4>(earns 10-20 golds)</h4>
+                    <form action="/process_money" method='post'>
+                        <input type="hidden" name='building' value='farm'>
+                        <button>Find Gold!</button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="col-md-12 border text-center">
+                    <h1>Cave</h1>
+                    <h4>(earns 5-10 golds)</h4>
+                    <form action="/process_money" method='post'>
+                        <input type="hidden" name='building' value='cave'>
+                        <button>Find Gold!</button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="col-md-12 border text-center">
+                    <h1>House</h1>
+                    <h4>(earns 2-5 golds)</h4>
+                    <form action="/process_money" method='post'>
+                        <input type="hidden" name='building' value='house'>
+                        <button>Find Gold!</button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="col-md-12 border text-center">
+                    <h1>Casino</h1>
+                    <h4>(earns/loses 0-50 golds)</h4>
+                    <form action="/process_money" method='post'>
+                        <input type="hidden" name='building' value='casino'>
+                        <button>Find Gold!</button>
+                    </form>
+                </div>
+            </div>
+        </div> <!-- end of 2nd row -->
+        <div class="row tmargin">
+          <div class="col-md-12">
+            <p>Activities:</p>
+          </div>
+          <div class="col-md-12">
+            <div class="activity">
+              {% for ele in session['activity'] %}
+                <p style="font-size: 12px; margin: 0px 0px; color: {{ ele['class'] }};"> {{ ele['activity'] }} {{ TD }}</p>
+              {% endfor %}
+            </div>
+          </div>
+        </div> <!-- endof row -->
+      </div>
+    </body>
+</html>

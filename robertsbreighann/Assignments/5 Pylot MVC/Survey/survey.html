@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Survey</title>
+	<style type="text/css" media="screen">
+		form{margin: 0 auto; text-align: center; width: 200px;}
+		#name{margin-bottom: 10px;}
+		#container{    
+			background: darkgray;
+			margin: 0 auto;
+		    width: 400px;
+		    padding: 10px;
+		    border: 1px solid;}
+	</style>
+</head>
+<body>
+	<div id="container">
+		<form action='/process' method='POST'>
+		    <label for="name">Name:<input type="text" name="name" id="name"></label>
+		    <label>Location:
+		        <select name="location">
+		         	<option value="Dallas">Dallas</option>
+		         	<option value="Washington DC">Washington DC</option>
+		         	<option value="Silicon Valley">Silicon Valley</option>
+		         	<option value="San Diego">San Diego</option>
+		        </select>
+		   	</label>
+		   	<label>Favorite Language:
+		        <select name="language">
+		        	<option value="Ruby">Ruby on Rails</option>
+		        	<option value="Python">Python</option>
+		        	<option value="C#">C#</option>
+		    	</select>
+		    </label>
+		    <div>Comments (Optional):
+		    	<textarea  name='description'  id="description"></textarea>
+		    </div>
+		    <input type="submit" value="Submit">
+		 </form>
+	</div>
+</body>
+</html>

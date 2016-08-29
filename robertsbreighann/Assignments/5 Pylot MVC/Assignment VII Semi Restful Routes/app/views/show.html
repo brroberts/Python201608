@@ -1,0 +1,25 @@
+<html>
+<head>
+<link rel="stylesheet" href="/static/css/styles.css" type="text/css">
+</head>
+<body>
+	<div id="show">
+		<h1>Product {{product['id']}}</h1>
+		 <table>
+			 <tr>
+              <td>Name:</td>
+              <td>{{product['name']}}</td>              
+            </tr>
+            <tr>
+              <td>Description:</td>
+              <td>{{product['description']}}</td>              
+            </tr>
+            <tr>
+              <td>Price:</td>
+              <td>{{product['price']}}</td>              
+            </tr>            
+        </table>
+		<a href="/products/edit/{{product['id']}}">Edit</a>|<a href="/">Back</a>
+	</div>
+</body>
+</html>

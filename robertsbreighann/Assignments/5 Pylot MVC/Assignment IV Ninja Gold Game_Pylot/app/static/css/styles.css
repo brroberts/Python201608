@@ -1,0 +1,18 @@
+* {
+  font-family: verdana;
+}
+.tmargin {
+    margin-top: 10px;
+}
+.border {
+    border: solid 1px black;
+    padding: 5px;
+    background: lightgreen;
+}
+.activity {
+    content: '';
+    height: 150px;
+    resize: none;
+    overflow-y: scroll;
+    border: solid 1px black;
+}

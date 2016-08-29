@@ -1,0 +1,31 @@
+<html>
+<head>
+  <title></title>
+  <style type="text/css">
+    .edit {
+      border: 1px solid black;
+    }
+    label { display:block;}
+  </style>
+</head>
+<body>
+
+  <div>
+    <form method='POST' action='/friends'>
+      <label>First Name: <input type='text' name='first_name' /></label>
+      <label>Last Name: <input type='text' name='last_name' /></label>
+      <label>Email: <input type='text' name='email' /></label>
+      <input type='submit' value='Join me in taking over the world!' />
+    </form>
+  </div>
+
+  {% for friend in friends %}
+  <form method='post' action='/friends/{{ friend[ 'id' ] }}/delete'>
+    <a class='edit' href='/friends/{{ friend[ 'id' ] }}/edit'>Edit</a>
+    <input type='submit' value='Delete'>
+    {{ friend['first_name']}} {{ friend['last_name']}} ({{ friend['created_at']}})
+  </form>
+  {% endfor %}
+
+</body>
+</html>

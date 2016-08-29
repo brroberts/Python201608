@@ -1,0 +1,52 @@
+<!doctype html>
+
+<html>
+<head>
+	<title>Registration Page</title>
+	<link rel="stylesheet" href="{{url_for('static',filename='css/main.css')}}">
+</head>
+<body>
+	<div id="wrapper">
+		<div id="top">
+			<div id="headings">
+				<h1 id="m1">Coding Dojo Wall</h1>
+				<h1 id="m2">Welcome {{fname}} </h1>
+			</div>	
+			<form action="/logout">
+					<input class='button' type="submit" name="submit" value ="Logout">		
+			</form>
+
+		</div>
+
+		<div id="post">	
+			<h2>Post a message</h2>
+			<form action="/message" method='POST'>
+				<textarea name="message" id="mBox"> </textarea>
+				<label><input class='button' type="submit" name="submit" value="Post a message"></label>
+			</form>
+		</div>
+		<div id="wall">	
+			{% for message in messages:%}
+				<div id="message">
+					<h3>{{message['first_name']}} {{message['last_name']}} {{message['created_at']}}</h3>	
+					<p> {{message['message']}} </p>	
+					<div id="comment">
+						{% for comment in message['comments']:%}
+							<h3>{{comment['first_name']}} {{comment['last_name']}} {{comment['created_at']}}</h3>	
+							<p> {{comment['comment']}} </p>	
+							
+							
+						{% endfor%}	
+						
+					<h3 id = "com">Post a comment</h3>
+					<form action="/comment" method='POST'>
+						<input type="hidden" name="message_id" value = "{{message['id']}}">
+						<textarea name="comment" id="cBox"> </textarea>		
+						<label><input class='button' type="submit" name="submit" value="Post a comment"></label>
+					</form>
+					</div>		
+				</div>
+			{% endfor%}					
+	</div>
+</body>
+</html>

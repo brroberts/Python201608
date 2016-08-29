@@ -1,0 +1,24 @@
+<html>
+<head>
+	<link rel="stylesheet" href="/static/css/styles.css" type="text/css">
+</head>
+<body>
+	<div id="top">
+	<p>Thanks for submitting this form!. You have submitted this form 
+		{{data['count']}} times now.
+	</p>
+	</div>
+<div id="wrap">
+	<h2>Submitted Information</h2>
+	<div id="disp">	
+		<p>Name: {{data['name']}}</p>
+		<p>Dojo Location: {{data['location']}}</p>
+		<p>Favorite Language: {{data['language']}}</p>
+		<p>Comment: {{data['comment']}}</p>
+	</div>	
+	<form action="/back">		
+		<label><input type="submit" name="submit" value="Go Back"></label>
+	</form>	
+</div>
+</body>
+</html>

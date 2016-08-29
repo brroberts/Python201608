@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>User Dashboard</title>
+	<!-- skeleton cdn -->
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="twelve columns">
+				<h2>Welcome, {{ user['first_name'] }} {{ user['last_name'] }}</h2>
+				<p>Email address: {{ user['email'] }}</p>
+				<p>Profile created: {{ user['created_at'] }}</p>
+				<form action="/">
+					<input class="button-primary" type="submit" value="Log Out">
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

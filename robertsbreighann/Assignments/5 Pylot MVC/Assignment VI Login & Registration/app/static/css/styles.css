@@ -1,0 +1,56 @@
+* {
+  font-family: Calibri;
+  margin: 0;
+  padding: 0;
+}
+#wrap {
+  width: 450px;  
+  margin: auto auto;
+  font-size: 1.75em;
+}
+.box {
+  margin: 20px 0;
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid seagreen;
+  border-radius: 20px;
+  
+}
+label {
+  display: block;
+  margin: 10px 10px;
+  padding: 10px 0;
+  
+}
+input {
+  float: right;    
+  border-radius: 5px;
+  width: 200px;
+  font-size: 1em;
+}
+
+form input[type=submit] {
+  width: 200px;
+  border-radius: 5px;
+  border: none;  
+  background-color: seagreen;
+  color: white;
+  font-size: 1em;
+  margin-bottom: 20px;
+  padding: 10px 0;
+}
+
+.box h1 {
+  
+  color: white;
+  background-color: seagreen;
+  border-radius: 15px 15px 0 0;
+  padding: 0 10px;
+  font-weight: normal;
+}
+#errors {
+  font-size: .5em;
+  color: red;
+  border: none;
+
+}

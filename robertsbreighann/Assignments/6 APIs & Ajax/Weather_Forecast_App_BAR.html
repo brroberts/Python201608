@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Weather Forecast App</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			
+			$('form').submit(function() {
+				url = 'http://api.openweathermap.org/data/2.5/weather?q=' + $('#location').val() + '&APPID=c1da93c90f2498f1ddee916ba2e38ff5';
+				$.get(url, function(res) {
+					$('#city').text(function(){
+						return res.name;
+					})
+					$('#temp').text(function(){
+						farenheit = 1.8*(res.main.temp-273)+32;
+						return 'Temperature: ' + farenheit.toFixed(2);
+					})
+				}, 'json');
+				return false;
+			});
+		});
+	</script>
+</head>
+<body>
+	<form>
+		<input type="text" id="location" placeholder="City Name">
+		<input type="submit" value="Search Weather">
+	</form>
+	<h1 id="city"></h1>
+	<p id="temp"></p>
+</body>
+</html>

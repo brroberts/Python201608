@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+	<div id="wrapper">
+		<h1>Please enter your email</h1>
+	{% with error = get_flashed_messages(category_filter=["error"]) %}
+		{% if error %}	
+			<div id="error">
+				<p>{{error[0]}}</p>	
+			</div>	
+		{% endif%}
+	{% endwith%}	
+	
+	{% with message = get_flashed_messages(category_filter=["success"]) %}
+		{% if message %}	
+			<div id="success">
+				<p>{{message[0]}}</p>	
+			</div>	
+		{% endif%}
+	{% endwith%}	
+	<div id="form">	
+		<form action="/email" method= 'POST'>
+			Email Address: <input type="email" name ='email'>
+			<input type="submit" name="submit" value="Submit"> 
+		</form>
+	</div>
+	{%for email in email_data %}
+		<div id ="display">
+			{{email['email']}}
+			{{email['created_at']}}
+			<form action="/del" method= 'POST'>
+				<input type="hidden" name ='delEmail' value="{{email['id']}}">
+				<input type="submit" name="submit" value="Delete"> 
+			</form>
+		</div>	
+	{%endfor%}
+	</div>	
+</body>
+</html>

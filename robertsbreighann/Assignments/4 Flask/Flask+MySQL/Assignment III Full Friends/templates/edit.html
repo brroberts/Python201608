@@ -1,0 +1,17 @@
+<html>
+<head>
+  <title></title>
+  <style type="text/css">
+  label { display: block; }
+  </style>
+</head>
+<body>
+  <form method='POST' action='/friends/{{ friend['id'] }}'>
+    <h2>Became friend at {{ friend['create_at'] }}</h2>
+    <label>First Name: <input type='text' name='first_name' value='{{ friend['first_name'] }}' /></label>
+    <label>Last Name: <input type='text' name='last_name' value='{{ friend['last_name'] }}' /></label>
+    <label>Email: <input type='text' name='email' value='{{ friend['email'] }}' /></label>
+    <input type='submit' value='Update!' />
+  </form>
+</body>
+</html>

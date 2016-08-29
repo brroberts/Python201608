@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Ajax Posts</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}"></script>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+	<div id="container">
+		<header>
+			<h1>My Posts</h1>
+			<form>
+				<textarea placeholder="Add a note" name="new_note" id="new_note"></textarea>
+				<input type="submit" value="Post It!">
+			</form>
+		</header>
+		<div id="board">
+		</div>
+	</div>
+</body>
+</html>
